@@ -40,11 +40,11 @@ class FeedbackPage extends State<FeedbackPageState> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   Container(
                     width: 100.0,
                     height: 100.0,
-                    child: Image(
+                    child: const Image(
                       image: AssetImage("assets/logo/logo_transparent.png"),
                     ),
                   ),
@@ -66,7 +66,7 @@ class FeedbackPage extends State<FeedbackPageState> {
                           colors: [Colors.white.withOpacity(0.70), Colors.white.withOpacity(0.20), Colors.lightBlueAccent.withOpacity(0.10), Colors.lightBlueAccent.withOpacity(0.12)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          stops: [0.0, 0.39, 0.40, 1.0],
+                          stops: const [0.0, 0.39, 0.40, 1.0],
                         ),
                         blur: 15.0,
                         borderWidth: 1.5,
@@ -75,37 +75,29 @@ class FeedbackPage extends State<FeedbackPageState> {
                         shadowColor: Colors.black.withOpacity(0.20),
                         alignment: Alignment.center,
                         frostedOpacity: 0.2,
-                        margin: EdgeInsets.all(8.0),
-                        padding: EdgeInsets.all(8.0),
+                        margin: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Column(
                           children: [
-                            SizedBox(
+                            const SizedBox(
                               height: 200.00,
                             ),
-
                             RatingBar.builder(
                               itemCount: 5,
                               initialRating: 3,
                               direction: Axis.horizontal,
                               allowHalfRating: true,
-                              itemBuilder :(context, _)=> Icon(
+                              itemBuilder :(context, _)=> const Icon(
                                 Icons.star,
                                 color: Colors.indigoAccent,
-
-
                               ),
                               onRatingUpdate: (rating){
-                                print(rating);
                                 rate= rating;
                               },
-
                             ),
-
-
-                            SizedBox(
+                            const SizedBox(
                               height: 40.00,
                             ),
-
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -117,11 +109,9 @@ class FeedbackPage extends State<FeedbackPageState> {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(25)
                                   ),
-                                  child: Text('Home',
+                                  child: const Text('Home',
                                       style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold )
                                   ),
-
-
                                 ),  RaisedButton(
                                   onPressed: () {
                                     Navigator.push(context, MaterialPageRoute(
@@ -132,18 +122,11 @@ class FeedbackPage extends State<FeedbackPageState> {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(25)
                                   ),
-                                  child: Text('Submit',
+                                  child: const Text('Submit',
                                       style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold )
                                   ),
-
-
                                 ),
-
-
                               ],
-
-
-
                             ),
                           ],
                         ),
@@ -180,11 +163,11 @@ class secondpage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   Container(
                     width: 100.0,
                     height: 100.0,
-                    child: Image(
+                    child: const Image(
                       image: AssetImage("assets/logo/logo_transparent.png"),
                     ),
                   ),
@@ -206,7 +189,7 @@ class secondpage extends StatelessWidget {
                           colors: [Colors.white.withOpacity(0.70), Colors.white.withOpacity(0.20), Colors.lightBlueAccent.withOpacity(0.10), Colors.lightBlueAccent.withOpacity(0.12)],
                           begin: Alignment.topLeft,
                           end: Alignment.bottomRight,
-                          stops: [0.0, 0.39, 0.40, 1.0],
+                          stops: const [0.0, 0.39, 0.40, 1.0],
                         ),
                         blur: 15.0,
                         borderWidth: 1.5,
@@ -215,12 +198,12 @@ class secondpage extends StatelessWidget {
                         shadowColor: Colors.black.withOpacity(0.20),
                         alignment: Alignment.center,
                         frostedOpacity: 0.2,
-                        margin: EdgeInsets.all(8.0),
-                        padding: EdgeInsets.all(8.0),
+                        margin: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Center(
                           child: Column(
                             children: [
-                              SizedBox(
+                              const SizedBox(
                                 height: 150.00,
                               ),
                               Center(
@@ -229,45 +212,27 @@ class secondpage extends StatelessWidget {
                                   color: Colors.black54,
                                   fontWeight: FontWeight.bold,
 
-
-
-
                                 ),),
                               ),
-
-
-
-
-
-                              SizedBox(
+                              const SizedBox(
                                 height: 40.00,
                               ),
-
-
-
                               Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   RaisedButton(
                                     onPressed: () {
-                                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
+                                      Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));
                                     },
                                     color: Colors.lightBlue[400],
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(25)
                                     ),
-                                    child: Text('Go Back',
+                                    child: const Text('Go Back',
                                         style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold )
                                     ),
                                   )
-
-
-
-
                                 ],
-
-
-
                               ),
                             ],
                           ),
