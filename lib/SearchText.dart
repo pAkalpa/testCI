@@ -45,11 +45,11 @@ class SearchText extends State<SearchTextState> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                     Container(
                       width: 100.0,
                       height: 100.0,
-                      child: Image(
+                      child: const Image(
                         image: AssetImage('assets/logo/logo_transparent.png'), //image added
                       ),
                     ),
@@ -74,7 +74,7 @@ class SearchText extends State<SearchTextState> {
                                 ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
-                                stops: [0.0, 0.39, 0.40, 1.0],
+                                stops: const [0.0, 0.39, 0.40, 1.0],
                               ),
                               blur: 15.0,
                               borderWidth: 1.5,
@@ -83,8 +83,8 @@ class SearchText extends State<SearchTextState> {
                               shadowColor: Colors.black.withOpacity(0.20),
                               alignment: Alignment.center,
                               frostedOpacity: 0.2,
-                              margin: EdgeInsets.all(8.0),
-                              padding: EdgeInsets.all(8.0),
+                              margin: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: Column(children: [
                                 const SizedBox(
                                   height: 100.0,
@@ -121,9 +121,9 @@ class SearchText extends State<SearchTextState> {
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(25.0),
                                         ),
-                                        title: Text("Error 404",
+                                        title: const Text("Error 404",
                                             textAlign: TextAlign.center),
-                                        content: Text("Ops! you scan an object out of our scope",
+                                        content: const Text("Ops! you scan an object out of our scope",
                                             textAlign: TextAlign.center),
                                         actions: <Widget>[
                                           Center(
@@ -136,7 +136,7 @@ class SearchText extends State<SearchTextState> {
                                                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
 
                                               },
-                                              child: Text("Home",
+                                              child: const Text("Home",
                                                   style: TextStyle(color: Colors.white)),
                                             ),
                                           ),
@@ -157,7 +157,7 @@ class SearchText extends State<SearchTextState> {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(25.0),
                                     ),
-                                    child: Text(
+                                    child: const Text(
                                       "Search sign", //button text
                                       style: TextStyle(
                                         color: Colors.white,

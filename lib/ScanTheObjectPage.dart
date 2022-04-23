@@ -65,7 +65,7 @@ class ScanTheObjectPage extends State<ScanTheObjectState> {
             Container(
               width: 100.0,
               height: 100.0,
-              child: Image(
+              child: const Image(
                 image: AssetImage('assets/logo/logo_transparent.png'),
               ),
             ),
@@ -207,7 +207,7 @@ class DisplayPictureScreen extends StatelessWidget {
                   Container(
                     width: 100.0,
                     height: 100.0,
-                    child: Image(
+                    child: const Image(
                       image: AssetImage('assets/logo/logo_transparent.png'),
                     ),
                   ),
@@ -277,9 +277,9 @@ class DisplayPictureScreen extends StatelessWidget {
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(25.0),
                                       ),
-                                      title: Text("Error 404",
+                                      title: const Text("Error 404",
                                           textAlign: TextAlign.center),
-                                      content: Text("Ops! you scan an object out of our scope",
+                                      content: const Text("Ops! you scan an object out of our scope",
                                           textAlign: TextAlign.center),
                                       actions: <Widget>[
                                         Center(
@@ -292,7 +292,7 @@ class DisplayPictureScreen extends StatelessWidget {
                                               Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
 
                                             },
-                                            child: Text("Home",
+                                            child: const Text("Home",
                                                 style: TextStyle(color: Colors.white)),
                                           ),
                                         ),
@@ -309,7 +309,7 @@ class DisplayPictureScreen extends StatelessWidget {
                                  shape: RoundedRectangleBorder(
                                    borderRadius: BorderRadius.circular(25.0),
                                  ),
-                                  child: Text(
+                                  child: const Text(
                                     "Show Sign",
                                     style: TextStyle(
                                       color: Colors.white,

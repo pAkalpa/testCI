@@ -35,7 +35,7 @@ class LandingPage extends State<LandingPageState> {
                     Container(
                       width: 100.0,
                       height: 100.0,
-                      child: Image(
+                      child: const Image(
                         image: AssetImage('assets/logo/logo_transparent.png'), //image added
                       ),
                     ),
@@ -72,7 +72,7 @@ class LandingPage extends State<LandingPageState> {
                               margin: EdgeInsets.all(8.0),
                               padding: EdgeInsets.all(8.0),
                               child: Column(children: [
-                                SizedBox(
+                                const SizedBox(
                                   height: 100.0,
                                 ),
                                 Text(
@@ -83,7 +83,7 @@ class LandingPage extends State<LandingPageState> {
                                     fontStyle: FontStyle.italic,
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 75.0,
                                 ),
                                 Column(
@@ -96,7 +96,7 @@ class LandingPage extends State<LandingPageState> {
                                     shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(25.0),
                                     ),
-                                    child: Text(
+                                    child: const Text(
                                     "Search sign through text", //button text
                                     style: TextStyle(
                                     color: Colors.white,
@@ -118,7 +118,7 @@ class LandingPage extends State<LandingPageState> {
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(25.0),
                                         ),
-                                        child: Text(
+                                        child: const Text(
                                           "Scan the object", //button text
                                           style: TextStyle(
                                             color: Colors.white,
