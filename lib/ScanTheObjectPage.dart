@@ -61,7 +61,7 @@ class ScanTheObjectPage extends State<ScanTheObjectState> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             Container(
               width: 100.0,
               height: 100.0,
@@ -90,7 +90,7 @@ class ScanTheObjectPage extends State<ScanTheObjectState> {
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        stops: [0.0, 0.39, 0.40, 1.0],
+                        stops: const [0.0, 0.39, 0.40, 1.0],
                       ),
                       blur: 15.0,
                       borderWidth: 1.5,
@@ -99,13 +99,13 @@ class ScanTheObjectPage extends State<ScanTheObjectState> {
                       shadowColor: Colors.black.withOpacity(0.20),
                       alignment: Alignment.center,
                       frostedOpacity: 0.2,
-                      margin: EdgeInsets.all(8.0),
-                      padding: EdgeInsets.all(8.0),
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
                       child: Column(children: [
                         Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(height: 30),
+                            const SizedBox(height: 30),
                             Container(
                               height: 300.0,
                               width: 300.0,
@@ -122,7 +122,7 @@ class ScanTheObjectPage extends State<ScanTheObjectState> {
                                 },
                               ),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             FloatingActionButton(
                               onPressed: () async {
                                 try {
@@ -142,7 +142,7 @@ class ScanTheObjectPage extends State<ScanTheObjectState> {
                               },
                               child: const Icon(Icons.camera_alt),
                             ),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             // RaisedButton(
                             //     onPressed: () {
                             //       Navigator.of(context).push(MaterialPageRoute(
@@ -160,7 +160,7 @@ class ScanTheObjectPage extends State<ScanTheObjectState> {
                             //         fontWeight: FontWeight.bold,
                             //       ),
                             //     )),
-                            SizedBox(height: 10),
+                            const SizedBox(height: 10),
                             Text(
                               "!Warning Please hold the camera for seconds",
                               style: TextStyle(
@@ -203,7 +203,7 @@ class DisplayPictureScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   Container(
                     width: 100.0,
                     height: 100.0,
@@ -235,7 +235,7 @@ class DisplayPictureScreen extends StatelessWidget {
                               ],
                               begin: Alignment.topLeft,
                               end: Alignment.bottomRight,
-                              stops: [0.0, 0.39, 0.40, 1.0],
+                              stops: const [0.0, 0.39, 0.40, 1.0],
                             ),
                             blur: 15.0,
                             borderWidth: 1.5,
@@ -244,17 +244,17 @@ class DisplayPictureScreen extends StatelessWidget {
                             shadowColor: Colors.black.withOpacity(0.20),
                             alignment: Alignment.center,
                             frostedOpacity: 0.2,
-                            margin: EdgeInsets.all(8.0),
-                            padding: EdgeInsets.all(8.0),
+                            margin: const EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Column(children: [
-                              SizedBox(height: 70),
+                              const SizedBox(height: 70),
                               Center(
                                 child: Image.file(
                                   File(imagePath),
                                 ),
 
                               ),
-                              SizedBox(height: 20),
+                              const SizedBox(height: 20),
                               RaisedButton(onPressed:()async {
 
                                 SimpleS3 _simpleS3 = SimpleS3();
@@ -267,7 +267,6 @@ class DisplayPictureScreen extends StatelessWidget {
                                     s3FolderPath: "test",
                                     fileName: "inputImage.jpg"
                                 );
-                                print(result);
 
                                 getSign();
                                 if (showPopup){
@@ -289,7 +288,7 @@ class DisplayPictureScreen extends StatelessWidget {
                                               borderRadius: BorderRadius.circular(25.0),
                                             ),
                                             onPressed: () {
-                                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
+                                              Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));
 
                                             },
                                             child: const Text("Home",

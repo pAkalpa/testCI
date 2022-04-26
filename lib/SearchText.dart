@@ -133,7 +133,7 @@ class SearchText extends State<SearchTextState> {
                                                 borderRadius: BorderRadius.circular(25.0),
                                               ),
                                               onPressed: () {
-                                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
+                                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));
 
                                               },
                                               child: const Text("Home",
@@ -174,9 +174,9 @@ class SearchText extends State<SearchTextState> {
   }
 }
 
-bool equalsIgnoreCase(String a, String b) =>
-    (a == null && b == null) ||
-        (a != null && b != null && a.toLowerCase() == b.toLowerCase());
+// bool equalsIgnoreCase(String a, String b) =>
+//     (a == null && b == null) ||
+//         (a.toLowerCase() == b.toLowerCase());
 
 
 late String name = "";

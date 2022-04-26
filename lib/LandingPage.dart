@@ -31,7 +31,7 @@ class LandingPage extends State<LandingPageState> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                     Container(
                       width: 100.0,
                       height: 100.0,
@@ -60,7 +60,7 @@ class LandingPage extends State<LandingPageState> {
                                 ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
-                                stops: [0.0, 0.39, 0.40, 1.0],
+                                stops: const [0.0, 0.39, 0.40, 1.0],
                               ),
                               blur: 15.0,
                               borderWidth: 1.5,
@@ -69,8 +69,8 @@ class LandingPage extends State<LandingPageState> {
                               shadowColor: Colors.black.withOpacity(0.20),
                               alignment: Alignment.center,
                               frostedOpacity: 0.2,
-                              margin: EdgeInsets.all(8.0),
-                              padding: EdgeInsets.all(8.0),
+                              margin: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: Column(children: [
                                 const SizedBox(
                                   height: 100.0,

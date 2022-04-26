@@ -18,13 +18,13 @@ Future<void> main() async {
   runApp(MaterialApp(
     initialRoute: '/',
     routes: {
-      '/': (context) => SplashScreen(),
-      '/second': (context) => LoginScreen(),
-      '/third': (context) => SignUpScreen(),
-      '/forth': (context) => LandingPageState(),
+      '/': (context) => const SplashScreen(),
+      '/second': (context) => const LoginScreen(),
+      '/third': (context) => const SignUpScreen(),
+      '/forth': (context) => const LandingPageState(),
       '/fifth': (context) => ScanTheObjectState(camera: firstCamera),
       '/sixth': (context) => ShowTheSignState(className: name),
-      '/seventh': (context) => FeedbackPageState(),
+      '/seventh': (context) => const FeedbackPageState(),
     },
   ));
 }

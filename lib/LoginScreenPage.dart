@@ -38,7 +38,7 @@ class StartState extends State<LoginScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            margin: EdgeInsets.only(top: 50),
+                            margin: const EdgeInsets.only(top: 50),
                             child: Image.asset(
                               'assets/logo/logo_transparent.png',
                               height: 100,
@@ -46,7 +46,7 @@ class StartState extends State<LoginScreen> {
                             ),
                           ),
                           Container(
-                            margin: EdgeInsets.only(right: 20, top: 20),
+                            margin: const EdgeInsets.only(right: 20, top: 20),
                             alignment: Alignment.bottomRight,
                             child: const Text(
                               "Login",
@@ -63,8 +63,8 @@ class StartState extends State<LoginScreen> {
 
                 Container(
                   alignment: Alignment.center,
-                  margin: EdgeInsets.only(left: 20, right: 20, top: 70),
-                  padding: EdgeInsets.only(left: 20, right: 20),
+                  margin: const EdgeInsets.only(left: 20, right: 20, top: 70),
+                  padding: const EdgeInsets.only(left: 20, right: 20),
                   height: 54,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
@@ -73,7 +73,7 @@ class StartState extends State<LoginScreen> {
                       BoxShadow(
                           offset: Offset(0, 10),
                           blurRadius: 50,
-                          color: Color(0x404040)
+                          color: Color(0x00404040)
                       ),
                     ],
                   ),
@@ -93,8 +93,8 @@ class StartState extends State<LoginScreen> {
 
                 Container(
                   alignment: Alignment.center,
-                  margin: EdgeInsets.only(left: 20, right: 20, top: 20),
-                  padding: EdgeInsets.only(left: 20, right: 20),
+                  margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
+                  padding: const EdgeInsets.only(left: 20, right: 20),
                   height: 54,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
@@ -122,13 +122,13 @@ class StartState extends State<LoginScreen> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+                  margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                   alignment: Alignment.centerRight,
                   child: GestureDetector(
                     onTap: () {
                       // Write Click Listener Code Here
                     },
-                    child: Text("Forget Password?"),
+                    child: const Text("Forget Password?"),
                   ),
                 ),
 
@@ -138,8 +138,8 @@ class StartState extends State<LoginScreen> {
                   },
                   child: Container(
                     alignment: Alignment.center,
-                    margin: EdgeInsets.only(left: 20, right: 20, top: 70),
-                    padding: EdgeInsets.only(left: 20, right: 20),
+                    margin: const EdgeInsets.only(left: 20, right: 20, top: 70),
+                    padding: const EdgeInsets.only(left: 20, right: 20),
                     height: 54,
                     decoration: BoxDecoration(
                       gradient: const LinearGradient(colors: [Colors.cyan, Colors.blueGrey],
@@ -165,11 +165,11 @@ class StartState extends State<LoginScreen> {
                   ),
                 ),
                 Container(
-                  margin: EdgeInsets.only(top: 10),
+                  margin: const EdgeInsets.only(top: 10),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text("Don't Have Any Account?  "),
+                      const Text("Don't Have Any Account?  "),
                       GestureDetector(
                         child: const Text(
                           "Register Now",
@@ -182,7 +182,7 @@ class StartState extends State<LoginScreen> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => LandingPageState(),
+                                builder: (context) => const LandingPageState(),
                               )
                           );
                         },
