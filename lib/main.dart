@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'FeedbackPage.dart';
 import 'LandingPage.dart';
 import 'LoginScreenPage.dart';
-import 'ScanTheObjectPage.dart';
 import 'ShowTheSignPage.dart';
 import 'SignUpScreenPage.dart';
 import 'SplashScreenPage.dart';
+import 'home.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,8 +22,8 @@ Future<void> main() async {
       '/second': (context) => const LoginScreen(),
       '/third': (context) => const SignUpScreen(),
       '/forth': (context) => const LandingPageState(),
-      '/fifth': (context) => ScanTheObjectState(camera: firstCamera),
-      '/sixth': (context) => ShowTheSignState(className: name),
+      '/fifth': (context) => const Home(),
+      '/sixth': (context) => ShowTheSignState(classLabel: name),
       '/seventh': (context) => const FeedbackPageState(),
     },
   ));

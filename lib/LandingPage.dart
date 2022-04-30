@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:teambetatech/SearchText.dart';
 
-import 'ScanTheObjectPage.dart';
+
+import 'home.dart';
 
 class LandingPageState extends StatefulWidget {
   const LandingPageState({Key? key}) : super(key: key);
@@ -112,7 +113,7 @@ class LandingPage extends State<LandingPageState> {
                                           // Get a specific camera from the list of available cameras.
                                           final firstCamera = cameras.first;
 
-                                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>ScanTheObjectState( camera: firstCamera,)));
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Home()));
                                         },
                                         color: Colors.lightBlue[400],
                                         shape: RoundedRectangleBorder(

@@ -4,7 +4,7 @@ import 'package:glass_kit/glass_kit.dart';
 import 'package:teambetatech/ShowTheSignPage.dart';
 
 import 'LandingPage.dart';
-import 'ScanTheObjectPage.dart';
+
 
 class SearchTextState extends StatefulWidget {
   const SearchTextState({Key? key}) : super(key: key);
@@ -45,11 +45,11 @@ class SearchText extends State<SearchTextState> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 10.0),
+                    SizedBox(height: 10.0),
                     Container(
                       width: 100.0,
                       height: 100.0,
-                      child: const Image(
+                      child: Image(
                         image: AssetImage('assets/logo/logo_transparent.png'), //image added
                       ),
                     ),
@@ -74,7 +74,7 @@ class SearchText extends State<SearchTextState> {
                                 ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
-                                stops: const [0.0, 0.39, 0.40, 1.0],
+                                stops: [0.0, 0.39, 0.40, 1.0],
                               ),
                               blur: 15.0,
                               borderWidth: 1.5,
@@ -83,8 +83,8 @@ class SearchText extends State<SearchTextState> {
                               shadowColor: Colors.black.withOpacity(0.20),
                               alignment: Alignment.center,
                               frostedOpacity: 0.2,
-                              margin: const EdgeInsets.all(8.0),
-                              padding: const EdgeInsets.all(8.0),
+                              margin: EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Column(children: [
                                 const SizedBox(
                                   height: 100.0,
@@ -110,10 +110,8 @@ class SearchText extends State<SearchTextState> {
                                 ),
                                 RaisedButton(onPressed : (){
 
-                                  className = nameController.text;
 
-
-                                  getSign();
+                                  getSign(nameController.text);
                                   if (showPopup){
                                     showDialog(
                                       context: context,
@@ -121,9 +119,9 @@ class SearchText extends State<SearchTextState> {
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(25.0),
                                         ),
-                                        title: const Text("Error 404",
+                                        title: Text("Error 404",
                                             textAlign: TextAlign.center),
-                                        content: const Text("Ops! you scan an object out of our scope",
+                                        content: Text("Ops! you scan an object out of our scope",
                                             textAlign: TextAlign.center),
                                         actions: <Widget>[
                                           Center(
@@ -133,10 +131,10 @@ class SearchText extends State<SearchTextState> {
                                                 borderRadius: BorderRadius.circular(25.0),
                                               ),
                                               onPressed: () {
-                                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));
+                                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
 
                                               },
-                                              child: const Text("Home",
+                                              child: Text("Home",
                                                   style: TextStyle(color: Colors.white)),
                                             ),
                                           ),
@@ -147,7 +145,7 @@ class SearchText extends State<SearchTextState> {
                                   }else{
                                     Navigator.of(context).push(MaterialPageRoute(
                                         builder: (context) =>
-                                            ShowTheSignState(className:name)));
+                                            ShowTheSignState(classLabel:name)));
                                   }
 
 
@@ -157,7 +155,7 @@ class SearchText extends State<SearchTextState> {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(25.0),
                                     ),
-                                    child: const Text(
+                                    child: Text(
                                       "Search sign", //button text
                                       style: TextStyle(
                                         color: Colors.white,
@@ -174,21 +172,23 @@ class SearchText extends State<SearchTextState> {
   }
 }
 
-// bool equalsIgnoreCase(String a, String b) =>
-//     (a == null && b == null) ||
-//         (a.toLowerCase() == b.toLowerCase());
+bool equalsIgnoreCase(String a, String b) =>
+    (a == null && b == null) ||
+        (a != null && b != null && a.toLowerCase() == b.toLowerCase());
 
 
 late String name = "";
 late bool showPopup = false;
 
-void getSign(){
+void getSign(object){
+  print(object);
+  String classLabel = object ;
   var classes = ["Airplane","Apple","Bag","Bicycle","Boat","Brass","Bread","Bun","Bus","Car","CD","Chicken","Coconut","Cricket","Cup","Desk","Egg","Father","Female","Fish","Flower","Food","Football","Frock","Fruit","Grass","Knife","Male","Medicine","Milk","Motorbike","Paper","Pen","Person","Plate","Rock","Sand","Saree","Shirt","Shoes","Shorts","Shower","Slippers","Socks","Spoon","Tea","Television","ThreeWheeler","Train","Tree","Trousers","Underwear","Van","Vegetable","Vest","Volleyball","Water"];
-
-  if(classes.contains(className)) {
-    name = className;
+  if(classes.contains(classLabel)) {
+    name = classLabel;
   }else{
     name = "-";
     showPopup = true;
+
   }
 }
