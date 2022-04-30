@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
-import 'package:glass_kit/glass_kit.dart';
+
 
 import 'LandingPage.dart';
 import 'ShowTheSignPage.dart';
@@ -47,12 +47,14 @@ class _HomeState extends State<Home> {
 
   }
 
+  @override
   void initState() {
     super.initState();
     _loading = true;
     loadModel().then((value) {});
   }
 
+  @override
   void dispose() {
     Tflite.close();
     _loading = false;
@@ -76,7 +78,7 @@ class _HomeState extends State<Home> {
       _output = output!;
     });
 
-    print(_output);
+
     sendData();
   }
 
@@ -105,8 +107,8 @@ class _HomeState extends State<Home> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 10.0),
-                Container(
+                const SizedBox(height: 10.0),
+                const SizedBox(
                   width: 100.0,
                   height: 100.0,
                   child: Image(
@@ -118,7 +120,7 @@ class _HomeState extends State<Home> {
                     decoration:
                     BoxDecoration(borderRadius: BorderRadius.circular(30)),
                     child: GlassContainer(
-                      height: 550,
+                      height: 400,
                       width: 300,
                       borderRadius: BorderRadius.circular(30),
                       gradient: LinearGradient(colors: [
@@ -156,37 +158,71 @@ class _HomeState extends State<Home> {
                               GestureDetector(
                                 onTap: pickImage,
                                 child: Container(
-                                  width: MediaQuery.of(context).size.width - 260,
+                                  width: MediaQuery.of(context).size.width - 225,
                                   alignment: Alignment.center,
                                   padding:
-                                  EdgeInsets.symmetric(horizontal: 24, vertical: 17),
+                                  const EdgeInsets.symmetric(horizontal: 24, vertical: 17),
                                   decoration: BoxDecoration(
                                     color: Colors.lightBlue[400],
                                     borderRadius:  BorderRadius.circular(25.0),
+
                                   ),
-                                  child: Text('Take a photo',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      )),
+                                  child:  Center(
+                                    child: Stack(
+                                      children:   [
+                                        const Icon(
+                                          Icons.camera_alt_sharp,
+                                          color: Colors.white,
+                                          size: 100,
+                                        ),
+                                        Container(
+                                          padding: const EdgeInsets.fromLTRB(5,100, 0, 5),
+                                          child: const Text('Open Camera',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 15,
+                                                fontWeight: FontWeight.bold,
+                                              )),
+                                        )
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
-                              SizedBox(height: 20),
+                              const SizedBox(height: 20),
                               GestureDetector(
 
                                 onTap: pickGalleryImage,
                                 child: Container(
-                                  width: MediaQuery.of(context).size.width - 260,
+
+                                  width: MediaQuery.of(context).size.width - 225,
                                   alignment: Alignment.center,
                                   padding:
-                                  EdgeInsets.symmetric(horizontal: 24, vertical: 17),
+                                  const EdgeInsets.symmetric(horizontal: 24, vertical: 17),
                                   decoration: BoxDecoration(
-                                    color:Colors.lightBlue[400],
+                                    color: Colors.lightBlue[400],
                                     borderRadius: BorderRadius.circular(25.0),
                                   ),
-                                  child: Text('Camera Roll',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                      )),
+                                  child:  Center(
+                                    child: Stack(
+                                      children:   [
+                                        const Icon(
+                                          Icons.image_search,
+                                          color: Colors.white,
+                                          size: 100,
+                                        ),
+                                        Container(
+                                          padding: const EdgeInsets.fromLTRB(5,100, 0, 5),
+                                          child: const Text('Use Gallery',
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold,
+                                              )),
+                                        )
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             ]
@@ -199,34 +235,6 @@ class _HomeState extends State<Home> {
               ]
             )
           ),
-          //   Column(
-          //   crossAxisAlignment: CrossAxisAlignment.start,
-          //   children: <Widget>[
-          //     Center(
-          //       child: _loading
-          //           ? Container(
-          //             )
-          //           :
-          //       Container(
-          //               child: Column(
-          //               /*children: [
-          //                 Container(
-          //                   height: 250,
-          //                   child: Image.file(_image),
-          //                 ),
-          //                 SizedBox(height: 20),
-          //
-          //                 _output != null ?
-          //                 Container(
-          //                   padding: EdgeInsets.symmetric(vertical: 10),
-          //                     child: Text('${_output[0]['label']}', style: TextStyle(color: Colors.white, fontSize: 20.0))):
-          //                     Container(),
-          //               ],*/
-          //             )),
-          //     ),
-          //
-          //   ],
-          // ),
           ]
         ));
   }
@@ -258,8 +266,8 @@ class DisplayPictureScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(height: 10.0),
-                Container(
+                const SizedBox(height: 10.0),
+                const SizedBox(
                   width: 100.0,
                   height: 100.0,
                   child: Image(
@@ -290,7 +298,7 @@ class DisplayPictureScreen extends StatelessWidget {
                         ],
                         begin: Alignment.topLeft,
                         end: Alignment.bottomRight,
-                        stops: [0.0, 0.39, 0.40, 1.0],
+                        stops: const [0.0, 0.39, 0.40, 1.0],
                       ),
                       blur: 15.0,
                       borderWidth: 1.5,
@@ -299,18 +307,16 @@ class DisplayPictureScreen extends StatelessWidget {
                       shadowColor: Colors.black.withOpacity(0.20),
                       alignment: Alignment.center,
                       frostedOpacity: 0.2,
-                      margin: EdgeInsets.all(8.0),
-                      padding: EdgeInsets.all(8.0),
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.all(8.0),
 
                       child: Column(
                         children: [
-                          SizedBox(height: 70),
+                          const SizedBox(height: 70),
                           Center(
                             child: Image.file(imagePath)
                           ),
-                          SizedBox(height: 20),
-
-
+                          const SizedBox(height: 20),
 
                           RaisedButton(onPressed:()async {
 
@@ -323,9 +329,9 @@ class DisplayPictureScreen extends StatelessWidget {
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(25.0),
                                   ),
-                                  title: Text("Error 404",
+                                  title: const Text("Error 404",
                                       textAlign: TextAlign.center),
-                                  content: Text("Ops! you scan an object out of our scope",
+                                  content: const Text("Ops! you scan an object out of our scope",
                                       textAlign: TextAlign.center),
                                   actions: <Widget>[
                                     Center(
@@ -335,10 +341,10 @@ class DisplayPictureScreen extends StatelessWidget {
                                           borderRadius: BorderRadius.circular(25.0),
                                         ),
                                         onPressed: () {
-                                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
+                                          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));
 
                                         },
-                                        child: Text("Home",
+                                        child: const Text("Home",
                                             style: TextStyle(color: Colors.white)),
                                       ),
                                     ),
@@ -349,13 +355,13 @@ class DisplayPictureScreen extends StatelessWidget {
                               Navigator.of(context).push(MaterialPageRoute(
                                   builder: (context) =>
                                       ShowTheSignState(classLabel:name,)));
-                              print(name + "sending class");
+
                             }
                           }, color: Colors.lightBlue[400],
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25.0),
                               ),
-                              child: Text(
+                              child: const Text(
                                 "Show Sign",
                                 style: TextStyle(
                                   color: Colors.white,
@@ -381,7 +387,6 @@ late String name = "";
 late bool showPopup = false;
 
 void getSign(object){
-  print(object);
   String classLabel = object ;
   var classes = ["Airplane","Apple","Bag","Bicycle","Boat","Brass","Bread","Bun","Bus","Car","CD","Chicken","Coconut","Cricket","Cup","Desk","Egg","Father","Female","Fish","Flower","Food","Football","Frock","Fruit","Grass","Knife","Male","Medicine","Milk","Motorbike","Paper","Pen","Person","Plate","Rock","Sand","Saree","Shirt","Shoes","Shorts","Shower","Slippers","Socks","Spoon","Tea","Television","ThreeWheeler","Train","Tree","Trousers","Underwear","Van","Vegetable","Vest","Volleyball","Water"];
   if(classes.contains(classLabel)) {

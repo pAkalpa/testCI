@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 
@@ -26,6 +25,8 @@ class ShowSignPage extends State<ShowTheSignState> {
 
   late  String classLabel = widget.classLabel;
 
+
+
   @override
   Widget build(BuildContext context) {
 
@@ -48,10 +49,10 @@ class ShowSignPage extends State<ShowTheSignState> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 10.0),
-                Container(
+                const SizedBox(
                   width: 100.0,
                   height: 100.0,
-                  child: const Image(
+                  child: Image(
                     image: AssetImage('assets/logo/logo_transparent.png'),
                   ),
                 ),
@@ -99,7 +100,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             indent: 30,
                             endIndent: 30,
                           ),
-                          Container(
+                          SizedBox(
                             width: 250.0,
                             height: 250.0,
                             child: Image.network(

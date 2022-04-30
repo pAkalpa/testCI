@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:glass_kit/glass_kit.dart';
 
 import 'LoginScreenPage.dart';
 
@@ -29,7 +28,7 @@ class StartState extends State<SplashScreen> {
 
   route() {
     Navigator.pushReplacement(context, MaterialPageRoute(
-        builder: (context) => LoginScreen()
+        builder: (context) => const LoginScreen()
     ));
   }
   @override
@@ -49,7 +48,7 @@ class StartState extends State<SplashScreen> {
             ),
           ),
           Center(
-            child: Container(
+            child: SizedBox(
               child: Image.asset('assets/logo/logo_transparent.png'),
               height: 125,
               width: 125,

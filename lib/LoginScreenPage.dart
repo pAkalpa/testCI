@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:glass_kit/glass_kit.dart';
+
 import 'package:teambetatech/LandingPage.dart';
 
 
-import 'SignUpScreenPage.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -81,60 +80,26 @@ class StartState extends State<LoginScreen> {
                     cursorColor: Colors.cyan,
                     decoration: InputDecoration(
                       icon: Icon(
-                        Icons.email,
+                        Icons.account_box_outlined,
                         color: Colors.cyan,
                       ),
-                      hintText: "Enter Email",
+                      hintText: "Enter Name",
                       enabledBorder: InputBorder.none,
                       focusedBorder: InputBorder.none,
                     ),
                   ),
                 ),
 
-                Container(
-                  alignment: Alignment.center,
-                  margin: const EdgeInsets.only(left: 20, right: 20, top: 20),
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  height: 54,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    color: Colors.grey[200],
-                    boxShadow: const [
-                      BoxShadow(
-                          offset: Offset(0, 20),
-                          blurRadius: 100,
-                          color: Color(0xffEEEEEE)
-                      ),
-                    ],
-                  ),
-                  child: const TextField(
-                    cursorColor: Colors.cyan,
-                    decoration: InputDecoration(
-                      focusColor: Colors.cyan,
-                      icon: Icon(
-                        Icons.vpn_key,
-                        color: Colors.cyan,
-                      ),
-                      hintText: "Enter Password",
-                      enabledBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                    ),
-                  ),
-                ),
-                Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                  alignment: Alignment.centerRight,
-                  child: GestureDetector(
-                    onTap: () {
-                      // Write Click Listener Code Here
-                    },
-                    child: const Text("Forget Password?"),
-                  ),
-                ),
+
 
                 GestureDetector(
                   onTap: () {
-                    // Write Click Listener Code Here.
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LandingPageState(),
+                        )
+                    );
                   },
                   child: Container(
                     alignment: Alignment.center,
@@ -164,32 +129,7 @@ class StartState extends State<LoginScreen> {
                     ),
                   ),
                 ),
-                Container(
-                  margin: const EdgeInsets.only(top: 10),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      const Text("Don't Have Any Account?  "),
-                      GestureDetector(
-                        child: const Text(
-                          "Register Now",
-                          style: TextStyle(
-                            color: Colors.cyan,
-                          ),
-                        ),
-                        onTap: () {
-                          // Write Tap Code Here.
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const LandingPageState(),
-                              )
-                          );
-                        },
-                      )
-                    ],
-                  ),
-                )
+
               ],
             )
         )

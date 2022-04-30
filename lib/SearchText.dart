@@ -1,4 +1,3 @@
-import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 import 'package:teambetatech/ShowTheSignPage.dart';
@@ -18,7 +17,7 @@ class SearchText extends State<SearchTextState> {
 
   final nameController = TextEditingController();
 
-  late String name = "-";
+
 
 
   @override
@@ -45,8 +44,8 @@ class SearchText extends State<SearchTextState> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    SizedBox(height: 10.0),
-                    Container(
+                    const SizedBox(height: 10.0),
+                    const SizedBox(
                       width: 100.0,
                       height: 100.0,
                       child: Image(
@@ -74,7 +73,7 @@ class SearchText extends State<SearchTextState> {
                                 ],
                                 begin: Alignment.topLeft,
                                 end: Alignment.bottomRight,
-                                stops: [0.0, 0.39, 0.40, 1.0],
+                                stops: const [0.0, 0.39, 0.40, 1.0],
                               ),
                               blur: 15.0,
                               borderWidth: 1.5,
@@ -83,13 +82,13 @@ class SearchText extends State<SearchTextState> {
                               shadowColor: Colors.black.withOpacity(0.20),
                               alignment: Alignment.center,
                               frostedOpacity: 0.2,
-                              margin: EdgeInsets.all(8.0),
-                              padding: EdgeInsets.all(8.0),
+                              margin: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(8.0),
                               child: Column(children: [
                                 const SizedBox(
                                   height: 100.0,
                                 ),
-                                Container(
+                                SizedBox(
                                   width: 250.0,
                                   child:  TextField(
                                     controller: nameController,
@@ -110,18 +109,21 @@ class SearchText extends State<SearchTextState> {
                                 ),
                                 RaisedButton(onPressed : (){
 
+                                  var inputInfo = nameController.text;
 
-                                  getSign(nameController.text);
+
+                                  getSign(inputInfo);
                                   if (showPopup){
+                                    showPopup = false;
                                     showDialog(
                                       context: context,
                                       builder: (ctx) => AlertDialog(
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(25.0),
                                         ),
-                                        title: Text("Error 404",
+                                        title: const Text("Error 404",
                                             textAlign: TextAlign.center),
-                                        content: Text("Ops! you scan an object out of our scope",
+                                        content: const Text("Ops! you scan an object out of our scope",
                                             textAlign: TextAlign.center),
                                         actions: <Widget>[
                                           Center(
@@ -131,10 +133,10 @@ class SearchText extends State<SearchTextState> {
                                                 borderRadius: BorderRadius.circular(25.0),
                                               ),
                                               onPressed: () {
-                                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
+                                                Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));
 
                                               },
-                                              child: Text("Home",
+                                              child: const Text("Home",
                                                   style: TextStyle(color: Colors.white)),
                                             ),
                                           ),
@@ -155,7 +157,7 @@ class SearchText extends State<SearchTextState> {
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(25.0),
                                     ),
-                                    child: Text(
+                                    child: const Text(
                                       "Search sign", //button text
                                       style: TextStyle(
                                         color: Colors.white,
@@ -172,23 +174,17 @@ class SearchText extends State<SearchTextState> {
   }
 }
 
-bool equalsIgnoreCase(String a, String b) =>
-    (a == null && b == null) ||
-        (a != null && b != null && a.toLowerCase() == b.toLowerCase());
-
 
 late String name = "";
 late bool showPopup = false;
 
 void getSign(object){
-  print(object);
   String classLabel = object ;
   var classes = ["Airplane","Apple","Bag","Bicycle","Boat","Brass","Bread","Bun","Bus","Car","CD","Chicken","Coconut","Cricket","Cup","Desk","Egg","Father","Female","Fish","Flower","Food","Football","Frock","Fruit","Grass","Knife","Male","Medicine","Milk","Motorbike","Paper","Pen","Person","Plate","Rock","Sand","Saree","Shirt","Shoes","Shorts","Shower","Slippers","Socks","Spoon","Tea","Television","ThreeWheeler","Train","Tree","Trousers","Underwear","Van","Vegetable","Vest","Volleyball","Water"];
-  if(classes.contains(classLabel)) {
+  if(classes.contains(classLabel)){
     name = classLabel;
   }else{
-    name = "-";
+    name = "";
     showPopup = true;
-
   }
 }

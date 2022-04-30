@@ -41,10 +41,10 @@ class FeedbackPage extends State<FeedbackPageState> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 10.0),
-                  Container(
+                  const SizedBox(
                     width: 100.0,
                     height: 100.0,
-                    child: const Image(
+                    child: Image(
                       image: AssetImage("assets/logo/logo_transparent.png"),
                     ),
                   ),
@@ -103,7 +103,7 @@ class FeedbackPage extends State<FeedbackPageState> {
                               children: [
                                 RaisedButton(
                                   onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));
                                   },
                                   color: Colors.lightBlue[400],
                                   shape: RoundedRectangleBorder(
@@ -164,10 +164,10 @@ class secondpage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const SizedBox(height: 10.0),
-                  Container(
+                  const SizedBox(
                     width: 100.0,
                     height: 100.0,
-                    child: const Image(
+                    child: Image(
                       image: AssetImage("assets/logo/logo_transparent.png"),
                     ),
                   ),
