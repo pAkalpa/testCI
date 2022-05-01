@@ -1,0 +1,14 @@
+apple
+bag
+cup
+desk
+pen
+shoes
+paper
+rock
+spoon
+shirt
+frock
+car
+bus
+bicycle

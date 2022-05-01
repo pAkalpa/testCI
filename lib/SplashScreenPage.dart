@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:glass_kit/glass_kit.dart';
 
 import 'LoginScreenPage.dart';
 
@@ -23,13 +22,13 @@ class StartState extends State<SplashScreen> {
   }
 
   startTime() async {
-    var duration = Duration(seconds: 4);
-    return new Timer(duration, route);
+    var duration = const Duration(seconds: 4);
+    return Timer(duration, route);
   }
 
   route() {
     Navigator.pushReplacement(context, MaterialPageRoute(
-        builder: (context) => LoginScreen()
+        builder: (context) => const LoginScreen()
     ));
   }
   @override
@@ -41,7 +40,7 @@ class StartState extends State<SplashScreen> {
       body: Stack(
         children: [
           Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 gradient: LinearGradient(colors: [Colors.cyan, Colors.blueGrey],
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter
@@ -49,7 +48,7 @@ class StartState extends State<SplashScreen> {
             ),
           ),
           Center(
-            child: Container(
+            child: SizedBox(
               child: Image.asset('assets/logo/logo_transparent.png'),
               height: 125,
               width: 125,

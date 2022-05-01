@@ -1,24 +1,30 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:glass_kit/glass_kit.dart';
 
 
 import 'FeedbackPage.dart';
 import 'LandingPage.dart';
-import 'ScanTheObjectPage.dart';
 
 
 
 class ShowTheSignState extends StatefulWidget{
-  late String className;
-  ShowTheSignState({Key? key, required this.className}) : super(key: key);
+  var classLabel;
+
+   ShowTheSignState({Key? key,  required  this.classLabel}) : super(key: key);
+
+
   @override
   State<ShowTheSignState> createState() => ShowSignPage();
+
+
 
 
 }
 
 class ShowSignPage extends State<ShowTheSignState> {
+
+  late  String classLabel = widget.classLabel;
+
 
 
   @override
@@ -43,10 +49,10 @@ class ShowSignPage extends State<ShowTheSignState> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const SizedBox(height: 10.0),
-                Container(
+                const SizedBox(
                   width: 100.0,
                   height: 100.0,
-                  child: const Image(
+                  child: Image(
                     image: AssetImage('assets/logo/logo_transparent.png'),
                   ),
                 ),
@@ -94,11 +100,11 @@ class ShowSignPage extends State<ShowTheSignState> {
                             indent: 30,
                             endIndent: 30,
                           ),
-                          Container(
+                          SizedBox(
                             width: 250.0,
                             height: 250.0,
                             child: Image.network(
-                              'https://sdgpdatabucket.s3.ap-south-1.amazonaws.com/Objects/$className.jpg',
+                              'https://sdgpdatabucket.s3.ap-south-1.amazonaws.com/Objects/$classLabel.jpg',
                             ),
                           ),
                           Divider(
@@ -118,7 +124,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             indent: 30,
                             endIndent: 30,
                           ),
-                          Text(className,
+                          Text(classLabel,
                             style: TextStyle(color: Colors.cyan[900], fontSize: 20.0),
                           ),
                           const SizedBox(
@@ -129,7 +135,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                             children: [
                               RaisedButton(
                                 onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>LandingPageState()));       // uncomment this line after set the navigation to the lankding page
+                                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const LandingPageState()));       // uncomment this line after set the navigation to the lankding page
                                 },
                                 color: Colors.lightBlue[400],
                                 shape: RoundedRectangleBorder(
@@ -142,7 +148,7 @@ class ShowSignPage extends State<ShowTheSignState> {
                               ),
                               RaisedButton(
                                 onPressed: () {
-                                   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>FeedbackPageState()));       // uncomment this line after set the navigation to the feedback page
+                                   Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const FeedbackPageState()));       // uncomment this line after set the navigation to the feedback page
                                 },
                                 color: Colors.lightBlue[400],
                                 shape: RoundedRectangleBorder(
