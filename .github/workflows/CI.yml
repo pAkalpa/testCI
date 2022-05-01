@@ -1,5 +1,3 @@
-name: CI/CD for Flutter
-
 on:
   push:
     tags:
