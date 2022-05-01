@@ -179,8 +179,8 @@ late String name = "";
 late bool showPopup = false;
 
 void getSign(object){
-  String classLabel = object ;
-  var classes = ["Airplane","Apple","Bag","Bicycle","Boat","Brass","Bread","Bun","Bus","Car","CD","Chicken","Coconut","Cricket","Cup","Desk","Egg","Father","Female","Fish","Flower","Food","Football","Frock","Fruit","Grass","Knife","Male","Medicine","Milk","Motorbike","Paper","Pen","Person","Plate","Rock","Sand","Saree","Shirt","Shoes","Shorts","Shower","Slippers","Socks","Spoon","Tea","Television","ThreeWheeler","Train","Tree","Trousers","Underwear","Van","Vegetable","Vest","Volleyball","Water"];
+  String classLabel = object.toLowerCase() ;
+  var classes = ["airplane","apple","bag","bicycle","boat","brass","bread","bun","bus","car","cd","chicken","coconut","cricket","cup","desk","egg","father","female","fish","flower","food","football","frock","fruit","grass","knife","male","medicine","milk","motorbike","paper","pen","person","plate","rock","sand","saree","shirt","shoes","shorts","shower","slippers","socks","spoon","tea","television","threeWheeler","train","tree","trousers","underwear","van","vegetable","vest","volleyball","water"];
   if(classes.contains(classLabel)){
     name = classLabel;
   }else{
